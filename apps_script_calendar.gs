@@ -58,7 +58,7 @@ function obtenerSlots(dateStr){
 
 function crearEvento(data){
   try{
-    const cal = CalendarApp.getCalendarById(CALENDAR_ID);
+    const cal = CalendarApp.getCalendarById(ylsel9998@gmail.com);
     const inicio = parse(data.date, data.time);
     const fin = new Date(inicio.getTime() + DURACION_MINUTOS*60000);
     const title = `Cita: ${data.nombre} (${data.tratamiento})`;
