@@ -62,36 +62,42 @@
       </div>
     </section>
 
-    <section id="agendar" class="booking container">
-      <h2>Agendar Cita</h2>
-      <p class="section-sub">Selecciona fecha y hora disponibles.</p>
-      <form id="citaForm" class="form">
-        <div class="grid">
-          <label>Nombre completo<input type="text" name="nombre" required placeholder="Tu nombre"></label>
-          <label>Teléfono (WhatsApp)<input type="tel" name="telefono" required placeholder="+52 ..."></label>
-          <label>Tratamiento sugerido
-            <select name="tratamiento" required>
-              <option value="" disabled selected>Selecciona</option>
-              <option>Limpiezas Dentales</option>
-              <option>Endodoncias</option>
-              <option>Extracciones</option>
-              <option>Coronas</option>
-              <option>Incrustaciones</option>
-              <option>Resinas</option>
-            </select>
-          </label>
-          <label>Fecha<input type="date" name="fecha" id="fecha" required></label>
-          <label>Hora disponible
-            <select name="hora" id="hora" required>
-              <option value="" disabled selected>Selecciona una fecha primero</option>
-            </select>
-          </label>
-        </div>
-        <button class="btn btn-primary" type="submit">Confirmar cita</button>
-        <div id="loader" class="loader" aria-live="polite"></div>
-        <p id="mensaje" class="msg"></p>
-      </form>
-    </section>
+      <section id="citas" class="section section-alt">
+    <h2>Agendar Cita</h2>
+    <p class="section-subtitle">Responde brevemente, el sistema sugerirá un tratamiento y reservará tu horario en Google Calendar.</p>
+    <form id="form-cita" class="form">
+      <div class="form-grid">
+        <label>Nombre completo<input type="text" name="nombre" required placeholder="Tu nombre y apellidos"/></label>
+        <label>Correo electrónico<input type="email" name="email" required placeholder="tucorreo@ejemplo.com"/></label>
+        <label>Teléfono (WhatsApp)<input type="tel" name="telefono" required placeholder="+52 33 2330 3334"/></label>
+        <label>Última limpieza dental
+          <select name="ultima_limpieza" required>
+            <option value="">Selecciona...</option><option value="menos_6_meses">Hace menos de 6 meses</option><option value="6a12">Entre 6 y 12 meses</option><option value="mas_12">Más de 12 meses</option><option value="nunca">Nunca</option>
+          </select>
+        </label>
+        <label>Dolor actual (0 = nada, 10 = intenso)
+          <input type="range" name="dolor" min="0" max="10" step="1" value="0" oninput="document.getElementById('nivel-dolor').textContent=this.value"/>
+          <span id="nivel-dolor">0</span>
+        </label>
+        <label>Signos o síntomas
+          <div class="checks">
+            <label><input type="checkbox" name="sintomas[]" value="sangrado_encias"/> Sangrado de encías</label>
+            <label><input type="checkbox" name="sintomas[]" value="mal_aliento"/> Mal aliento</label>
+            <label><input type="checkbox" name="sintomas[]" value="sensibilidad"/> Sensibilidad al frío/calor</label>
+            <label><input type="checkbox" name="sintomas[]" value="dolor_masticar"/> Dolor al masticar</label>
+            <label><input type="checkbox" name="sintomas[]" value="fractura"/> Fractura/astillado</label>
+          </div>
+        </label>
+        <label>Describe brevemente tu motivo de consulta<textarea name="descripcion" rows="3" placeholder="Cuéntanos qué necesitas..."></textarea></label>
+        <label>Fecha de cita<input type="date" name="fecha" id="fecha" required/></label>
+        <label>Hora disponible<select name="hora" id="hora" required><option value="">Selecciona una fecha primero...</option></select></label>
+      </div>
+      <div class="suggestion" id="sugerencia"></div>
+      <button type="submit" class="btn btn-primary">Confirmar cita</button>
+      <p id="respuesta" class="respuesta"></p>
+    </form>
+    <details class="mt-20"><summary>¿Prefieres ver el calendario?</summary><div class="calendar-wrap"><iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_PUBLIC_URL" frameborder="0"></iframe></div></details>
+  </section>
 
     <section id="contacto" class="contact container">
       <h2>Contacto</h2>
