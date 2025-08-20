@@ -40,7 +40,8 @@ body{font-family:Roboto,system-ui,-apple-system,sans-serif;color:var(--text);bac
 .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(233,30,99,.18)}
 
 /* Booking */
-.booking{padding:48px 20px;max-width:1100px;margin:0 auto}.section-alt{background:#fff7fa}.section-subtitle{color:var(--gris-600);margin-top:-8px;margin-bottom:20px}
+.btn{display:inline-block;background:var(--rosa-200);color:#111;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:700;border:1px solid var(--borde)}.btn-primary{background:var(--rosa);color:#fff;border-color:transparent}.center{text-align:center}.mt-20{margin-top:20px}
+.section{padding:48px 20px;max-width:1100px;margin:0 auto}.section-alt{background:#fff7fa}.section-subtitle{color:var(--gris-600);margin-top:-8px;margin-bottom:20px}
 .cards{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}.cards .card{grid-column:span 2;background:#fff;border:1px solid var(--borde);padding:18px;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.06)}.cards .card h3{margin:0 0 6px}
 
 /* Loader */
