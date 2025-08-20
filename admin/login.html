@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Acceso Administrador</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="auth">
+  <div class="login-card">
+    <img src="../assets/logo.png" alt="Logo" class="logo-sm"/>
+    <h1>Portal Administrativo</h1>
+    <p>Accede con tu cuenta de Google</p>
+    <button id="googleLogin" class="btn btn-google">Acceder con Google</button>
+    <p class="note">Acceso restringido</p>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "TU_API_KEY",
+      authDomain: "TU_DOMINIO.firebaseapp.com",
+      projectId: "TU_ID_PROYECTO",
+      storageBucket: "TU_ID_PROYECTO.appspot.com",
+      messagingSenderId: "TU_SENDER_ID",
+      appId: "TU_APP_ID"
+    };
+
+    const allowedEmail = "ylsel9998@gmail.com";
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    document.getElementById('googleLogin').addEventListener('click', () => {
+      signInWithPopup(auth, provider).then(result => {
+        const email = result.user.email;
+        if(email === allowedEmail){
+          localStorage.setItem('isAdminLoggedIn','true');
+          window.location.href = 'dashboard.html';
+        } else {
+          alert('❌ No tienes permisos');
+        }
+      }).catch(err => alert('Error de autenticación'));
+    });
+  </script>
+</body>
+</html>

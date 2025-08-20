@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clínica Dental - Dra. Lesly Vázquez</title>
+  <meta name="description" content="Limpiezas, endodoncias, extracciones, coronas, incrustaciones y resinas. Agenda tu cita con la Dra. Lesly Vázquez.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Coloca aquí las URLs de tus Apps Scripts una vez desplegados
+    window.APPS_SCRIPT_CAL_URL = "https://script.google.com/macros/s/TU_CALENDAR_EXEC/exec";
+    window.APPS_SCRIPT_SHEETS_URL = "https://script.google.com/macros/s/TU_SHEETS_EXEC/exec";
+    window.WHATSAPP = "+523323303334";
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#inicio" aria-label="Inicio">
+        <img src="assets/logo.png" alt="Logo Dra. Lesly Vázquez"/>
+        <span>Dra. Lesly Vázquez</span>
+      </a>
+      <nav class="main-nav" aria-label="Principal">
+        <a href="#inicio" class="active">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="signos-sintomas.html">Signos y Síntomas</a>
+        <a href="#agendar">Agendar</a>
+        <a href="#contacto">Contacto</a>
+        <a href="admin/login.html" class="admin-link">Admin</a>
+      </nav>
+      <button class="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Tu sonrisa, en manos expertas</h1>
+          <p>Odontología integral con un trato humano y profesional. Agenda tu cita con la Dra. Lesly Vázquez.</p>
+          <div class="hero-cta">
+            <a href="#agendar" class="btn btn-primary">Agendar cita</a>
+            <a href="https://wa.me/523323303334" target="_blank" class="btn btn-outline"><img class="icon" src="assets/whatsapp.svg" alt=""> WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true"></div>
+      </div>
+      <div class="bubbles" aria-hidden="true"></div>
+    </section>
+
+    <section class="services container">
+      <h2>Servicios</h2>
+      <p class="section-sub">Tratamientos con enfoque conservador y resultados duraderos.</p>
+      <div class="cards">
+        <a class="card" href="servicios.html#limpiezas"><h3>Limpiezas Dentales</h3><p>Profilaxis y mantenimiento periodontal.</p></a>
+        <a class="card" href="servicios.html#endodoncias"><h3>Endodoncias</h3><p>Conserva tus dientes con tratamiento de conducto.</p></a>
+        <a class="card" href="servicios.html#extracciones"><h3>Extracciones</h3><p>Cuando no es posible la conservación de la pieza.</p></a>
+        <a class="card" href="servicios.html#coronas"><h3>Coronas</h3><p>Restauraciones totales estéticas y resistentes.</p></a>
+        <a class="card" href="servicios.html#incrustaciones"><h3>Incrustaciones</h3><p>Alternativa conservadora a las coronas.</p></a>
+        <a class="card" href="servicios.html#resinas"><h3>Resinas</h3><p>Restauraciones estéticas del color del diente.</p></a>
+      </div>
+    </section>
+
+    <section id="agendar" class="booking container">
+      <h2>Agendar Cita</h2>
+      <p class="section-sub">Selecciona fecha y hora disponibles.</p>
+      <form id="citaForm" class="form">
+        <div class="grid">
+          <label>Nombre completo<input type="text" name="nombre" required placeholder="Tu nombre"></label>
+          <label>Teléfono (WhatsApp)<input type="tel" name="telefono" required placeholder="+52 ..."></label>
+          <label>Tratamiento sugerido
+            <select name="tratamiento" required>
+              <option value="" disabled selected>Selecciona</option>
+              <option>Limpiezas Dentales</option>
+              <option>Endodoncias</option>
+              <option>Extracciones</option>
+              <option>Coronas</option>
+              <option>Incrustaciones</option>
+              <option>Resinas</option>
+            </select>
+          </label>
+          <label>Fecha<input type="date" name="fecha" id="fecha" required></label>
+          <label>Hora disponible
+            <select name="hora" id="hora" required>
+              <option value="" disabled selected>Selecciona una fecha primero</option>
+            </select>
+          </label>
+        </div>
+        <button class="btn btn-primary" type="submit">Confirmar cita</button>
+        <div id="loader" class="loader" aria-live="polite"></div>
+        <p id="mensaje" class="msg"></p>
+      </form>
+    </section>
+
+    <section id="contacto" class="contact container">
+      <h2>Contacto</h2>
+      <ul class="contact-list">
+        <li>WhatsApp: <a href="https://wa.me/523323303334" target="_blank">+52 33 2330 3334</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/dra.lesly_vazquez" target="_blank">@dra.lesly_vazquez</a></li>
+        <li>Dirección: Guadalajara, Jalisco</li>
+      </ul>
+      <a href="https://wa.me/523323303334" target="_blank" class="whatsapp-btn"><img src="assets/whatsapp.svg" alt=""> Contactar por WhatsApp</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Logo" />
+        <div><strong>Dra. Lesly Vázquez</strong><br><small>© 2025 Todos los derechos reservados</small></div>
+      </div>
+      <nav class="footer-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="signos-sintomas.html">Signos y Síntomas</a>
+        <a href="admin/login.html">Admin</a>
+      </nav>
+      <div class="social">
+        <a href="https://www.instagram.com/dra.lesly_vazquez" target="_blank"><img src="assets/instagram.svg" alt="Instagram"/></a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/523323303334" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><img src="assets/whatsapp.svg" alt=""></a>
+
+  <script src="script.js"></script>
+</body>
+</html>
