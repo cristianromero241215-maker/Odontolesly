@@ -29,7 +29,7 @@ function doPost(e){
 }
 
 function obtenerSlots(dateStr){
-  const cal = CalendarApp.getCalendarById(CALENDAR_ID);
+  const cal = CalendarApp.getCalendarById(ylsel9998@gmail.com);
   const date = new Date(dateStr+'T00:00:00');
   const dow = date.getDay();
   const rangos = HORARIOS[dow];
