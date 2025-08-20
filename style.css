@@ -41,6 +41,7 @@ body{font-family:Roboto,system-ui,-apple-system,sans-serif;color:var(--text);bac
 
 /* Booking */
 .booking{padding:48px 20px;max-width:1100px;margin:0 auto}.section-alt{background:#fff7fa}.section-subtitle{color:var(--gris-600);margin-top:-8px;margin-bottom:20px}
+.cards{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}.cards .card{grid-column:span 2;background:#fff;border:1px solid var(--borde);padding:18px;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.06)}.cards .card h3{margin:0 0 6px}
 
 /* Loader */
 .loader{display:none;border:6px solid #f3f3f3;border-top:6px solid var(--rosa);border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;margin:16px auto}
