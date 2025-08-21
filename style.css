@@ -59,7 +59,7 @@ body{font-family:Roboto,system-ui,-apple-system,sans-serif;color:var(--text);bac
 .whatsapp-btn:hover{transform:translateY(-2px);background:#20b955}
 
 /* Footer */
-.site-footer{background:#fff;border-top:1px solid #f1f5f9;padding:20px 0;margin-top:10px}
+.site-footer{background:#fff;border-top:1px solid #fff7fa;padding:20px 0;margin-top:10px}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .footer-inner .brand{display:flex;align-items:center;gap:.8rem}
 .footer-inner .brand img{height:34px}
