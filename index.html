@@ -240,12 +240,12 @@
     // Enviar
     setLoading(true);
     try {
-      const res = await fetch(https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        // Si te da error de CORS, cambia a:  mode: 'no-cors'  y comenta la lectura de JSON
-        body: JSON.stringify(payload)
-      });
+      const res = await fetch(https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec, {
+  method: 'POST',
+  mode: 'no-cors',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(payload)
+});
 
       // Leer respuesta (si usas no-cors, comenta estas 3 líneas)
       const data = await res.json();
