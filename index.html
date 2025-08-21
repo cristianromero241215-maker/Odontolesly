@@ -176,7 +176,7 @@
       horaSelect.innerHTML = "<option>Cargando...</option>";
       horaSelect.disabled = true;
       try {
-        const res = await fetch(`${APPS_SCRIPT_URL}?date=${fechaInput.value}`);
+        const res = await fetch(`${https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec}?date=${fechaInput.value}`);
         const data = await res.json();
         if (!data.ok) throw new Error(data.message);
 
