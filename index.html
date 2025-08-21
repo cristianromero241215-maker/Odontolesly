@@ -100,9 +100,31 @@
       <input type="time" id="hora" name="hora" required>
     </div>
 
+    <!-- Preguntas adicionales que ya estaban -->
     <div class="form-group">
-      <label for="comentarios">Comentarios</label>
-      <textarea id="comentarios" name="comentarios" rows="3" placeholder="Describe tus síntomas o dudas"></textarea>
+      <label for="ultima-limpieza">¿Cuándo fue tu última limpieza dental?</label>
+      <input type="date" id="ultima-limpieza" name="ultima-limpieza">
+    </div>
+
+    <div class="form-group">
+      <label for="dolor">Nivel de dolor actual</label>
+      <select id="dolor" name="dolor">
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="ninguno">Ninguno</option>
+        <option value="leve">Leve</option>
+        <option value="moderado">Moderado</option>
+        <option value="intenso">Intenso</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="sintomas">Signos o síntomas</label>
+      <textarea id="sintomas" name="sintomas" rows="3" placeholder="Ej. inflamación, sangrado, sensibilidad..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="motivo">Descripción del motivo de consulta</label>
+      <textarea id="motivo" name="motivo" rows="3" placeholder="Describe brevemente el motivo de tu consulta"></textarea>
     </div>
 
     <button type="submit" class="btn-enviar">📅 Reservar Cita</button>
