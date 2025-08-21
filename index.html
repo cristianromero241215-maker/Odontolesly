@@ -173,5 +173,111 @@
   <a href="https://wa.me/523323303334" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><img src="assets/whatsapp.png" alt=""></a>
 
   <script src="script.js"></script>
+<script>
+  const APPS_SCRIPT_URL = 'PEGAR_AQUI_TU_URL_EXEC_DE_APPS_SCRIPT';
+
+  const form = document.getElementById('cita-form');
+  const fechaInput = document.getElementById('fecha');
+  const horaSelect = document.getElementById('hora');
+  const mensajeBox = document.getElementById('mensaje-form');
+  const btn = document.querySelector('.btn-enviar');
+
+  // Fecha mínima = hoy
+  const hoyISO = new Date().toISOString().split('T')[0];
+  fechaInput.setAttribute('min', hoyISO);
+
+  // Cuando eligen fecha, pedir horas libres al backend
+  fechaInput.addEventListener('change', async () => {
+    const fecha = fechaInput.value;
+    horaSelect.innerHTML = '<option value="">Cargando horas...</option>';
+    horaSelect.disabled = true;
+    try {
+      const res = await fetch(`${APPS_SCRIPT_URL}?date=${fecha}`);
+      const data = await res.json();
+      if (data.ok) {
+        if (data.hours.length === 0) {
+          horaSelect.innerHTML = '<option value="">No hay horas disponibles</option>';
+        } else {
+          horaSelect.innerHTML = '<option value="">-- Selecciona una hora --</option>' +
+            data.hours.map(h => `<option value="${h}">${h}</option>`).join('');
+        }
+      } else {
+        horaSelect.innerHTML = '<option value="">Error al cargar horas</option>';
+      }
+    } catch (err) {
+      horaSelect.innerHTML = '<option value="">Error de conexión</option>';
+    }
+    horaSelect.disabled = false;
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearMessage();
+
+    // Validaciones rápidas
+    const tel = document.getElementById('telefono').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if (!/^\+52\d{10}$/.test(tel)) {
+      return showMessage('Por favor, escribe un teléfono válido (+52 y 10 dígitos).', 'error');
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return showMessage('Escribe un correo válido.', 'error');
+    }
+
+    // Datos
+    const payload = {
+      nombre: document.getElementById('nombre').value.trim(),
+      telefono: tel,
+      email: email,
+      tratamiento: document.getElementById('tratamiento').value,
+      fecha: document.getElementById('fecha').value,
+      hora: document.getElementById('hora').value,
+      ultimaLimpieza: document.getElementById('ultima-limpieza').value,
+      dolor: document.getElementById('dolor').value,
+      sintomas: document.getElementById('sintomas').value,
+      motivo: document.getElementById('motivo').value
+    };
+
+    // Enviar
+    setLoading(true);
+    try {
+      const res = await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        // Si te da error de CORS, cambia a:  mode: 'no-cors'  y comenta la lectura de JSON
+        body: JSON.stringify(payload)
+      });
+
+      // Leer respuesta (si usas no-cors, comenta estas 3 líneas)
+      const data = await res.json();
+      if (!data.ok) {
+        showMessage('❌ ' + (data.message || 'No se pudo registrar la cita.'), 'error');
+      } else {
+        showMessage('✅ Cita registrada y agendada en calendario.', 'exito');
+        form.reset();
+        horaSelect.innerHTML = '<option value="">Selecciona una fecha primero</option>';
+      }
+    } catch (err) {
+      showMessage('❌ Error de conexión. Intenta de nuevo.', 'error');
+    } finally {
+      setLoading(false);
+    }
+  });
+
+  function showMessage(text, type) {
+    mensajeBox.textContent = text;
+    mensajeBox.className = 'mensaje ' + type;
+    mensajeBox.style.display = 'block';
+  }
+  function clearMessage() {
+    mensajeBox.textContent = '';
+    mensajeBox.className = 'mensaje';
+    mensajeBox.style.display = 'none';
+  }
+  function setLoading(isLoading) {
+    if (isLoading) btn.classList.add('loading');
+    else btn.classList.remove('loading');
+  }
+</script>
 </body>
 </html>
