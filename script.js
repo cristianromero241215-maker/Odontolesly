@@ -20,11 +20,11 @@ const fechaInput = document.getElementById('fecha');
 const horaSelect = document.getElementById('hora');
 
 async function cargarHorarios(dateStr){
-  if(!window.APPS_SCRIPT_CAL_URL) return;
+  if(!window.https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec) return;
   try{
     showLoader();
     if(horaSelect){ horaSelect.innerHTML = '<option>Consultando disponibilidad...</option>'; }
-    const res = await fetch(`${window.APPS_SCRIPT_CAL_URL}?date=${encodeURIComponent(dateStr)}`);
+    const res = await fetch(`${window.https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec}?date=${encodeURIComponent(dateStr)}`);
     const data = await res.json(); // { slots: [...] }
     if(!horaSelect) return;
     if(!Array.isArray(data.slots) || data.slots.length === 0){
@@ -62,15 +62,15 @@ if(form){
     const data = Object.fromEntries(new FormData(form).entries());
     try{
       // Registrar en Sheets
-      if(window.APPS_SCRIPT_SHEETS_URL){
-        await fetch(window.APPS_SCRIPT_SHEETS_URL, {
+      if(window.https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec){
+        await fetch(window.https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec, {
           method:'POST',
           body: JSON.stringify({ action:'add', ...data })
         });
       }
       // Crear evento en Calendar
-      if(window.APPS_SCRIPT_CAL_URL){
-        const calRes = await fetch(window.APPS_SCRIPT_CAL_URL, {
+      if(window.https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec){
+        const calRes = await fetch(window.https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec, {
           method:'POST',
           body: JSON.stringify({ action:'create', nombre:data.nombre, telefono:data.telefono, tratamiento:data.tratamiento, date:data.fecha, time:data.hora })
         });
