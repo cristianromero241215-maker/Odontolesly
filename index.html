@@ -62,43 +62,52 @@
       </div>
     </section>
 
-      <section id="citas" class="section section-alt">
-    <h2>Agendar Cita</h2>
-    <p class="section-subtitle">Responde brevemente, el sistema sugerirá un tratamiento y reservará tu horario en Google Calendar.</p>
-    <form id="form-cita" class="form">
-      <div class="form-grid">
-        <label>Nombre completo<input type="text" name="nombre" required placeholder="Tu nombre y apellidos"/></label>
-        <label>Correo electrónico<input type="email" name="email" required placeholder="tucorreo@ejemplo.com"/></label>
-        <label>Teléfono (WhatsApp)<input type="tel" name="telefono" required placeholder="+52 33 2330 3334"/></label>
-        <label>Última limpieza dental
-          <select name="ultima_limpieza" required>
-            <option value="">Selecciona...</option><option value="menos_6_meses">Hace menos de 6 meses</option><option value="6a12">Entre 6 y 12 meses</option><option value="mas_12">Más de 12 meses</option><option value="nunca">Nunca</option>
-          </select>
-          <div></div>
-        </label>
-        <label>Dolor actual (0 = nada, 10 = intenso)
-          <input type="range" name="dolor" min="0" max="10" step="1" value="0" oninput="document.getElementById('nivel-dolor').textContent=this.value"/>
-          <span id="nivel-dolor">0</span>
-        </label>
-        <label>Signos o síntomas
-          <div class="checks">
-            <label><input type="checkbox" name="sintomas[]" value="sangrado_encias"/> Sangrado de encías</label>
-            <label><input type="checkbox" name="sintomas[]" value="mal_aliento"/> Mal aliento</label>
-            <label><input type="checkbox" name="sintomas[]" value="sensibilidad"/> Sensibilidad al frío/calor</label>
-            <label><input type="checkbox" name="sintomas[]" value="dolor_masticar"/> Dolor al masticar</label>
-            <label><input type="checkbox" name="sintomas[]" value="fractura"/> Fractura/astillado</label>
-          </div>
-        </label>
-        <label>Describe brevemente tu motivo de consulta<textarea name="descripcion" rows="3" placeholder="Cuéntanos qué necesitas..."></textarea></label>
-        <label>Fecha de cita<input type="date" name="fecha" id="fecha" required/></label>
-        <label>Hora disponible<select name="hora" id="hora" required><option value="">Selecciona una fecha primero...</option></select></label>
-      </div>
-      <div class="suggestion" id="sugerencia"></div>
-      <button type="submit" class="btn btn-primary">Confirmar cita</button>
-      <p id="respuesta" class="respuesta"></p>
-    </form>
-    <details class="mt-20"><summary>¿Prefieres ver el calendario?</summary><div class="calendar-wrap"><iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_PUBLIC_URL" frameborder="0"></iframe></div></details>
-  </section>
+      <section id="agendar-cita" class="cita-section">
+  <h2>Agendar Cita</h2>
+  <p>Completa el formulario para reservar tu cita con la Dra. Lesly Vázquez.</p>
+
+  <form id="cita-form" class="cita-form">
+    <div class="form-group">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="+52 33 1234 5678" required>
+    </div>
+
+    <div class="form-group">
+      <label for="tratamiento">Tratamiento</label>
+      <select id="tratamiento" name="tratamiento" required>
+        <option value="" disabled selected>Selecciona un tratamiento</option>
+        <option value="limpieza">Limpieza Dental</option>
+        <option value="endodoncia">Endodoncia</option>
+        <option value="extraccion">Extracción</option>
+        <option value="corona">Corona</option>
+        <option value="incrustacion">Incrustación</option>
+        <option value="resina">Resina</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha" name="fecha" required>
+    </div>
+
+    <div class="form-group">
+      <label for="hora">Hora</label>
+      <input type="time" id="hora" name="hora" required>
+    </div>
+
+    <div class="form-group">
+      <label for="comentarios">Comentarios</label>
+      <textarea id="comentarios" name="comentarios" rows="3" placeholder="Describe tus síntomas o dudas"></textarea>
+    </div>
+
+    <button type="submit" class="btn-enviar">📅 Reservar Cita</button>
+  </form>
+</section>
 
     <section id="contacto" class="contact container">
       <h2>Contacto</h2>
