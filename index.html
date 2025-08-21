@@ -176,7 +176,7 @@
   horaSelect.innerHTML = "<option>Cargando...</option>";
   horaSelect.disabled = true;
   try {
-    const res = await fetch(`${https://script.google.com/macros/s/AKfycbzYPvCIL5zvNg5FWWQ6aYz74pqs2ASBDbABcqpXJcyIfimLQLKmY_d4OCy2cPH2i0-k/exec}?date=${fechaInput.value}`);
+    const res = await fetch(`${APPS_SCRIPT_URL}?date=${fechaInput.value}`);
     const data = await res.json();  // Esto funciona solo si Apps Script devuelve JSON correctamente
     if (!data.ok) throw new Error(data.message || "Error al cargar horarios");
 
@@ -211,7 +211,7 @@
       };
 
       try {
-        const res = await fetch(https://script.google.com/macros/s/AKfycbzYPvCIL5zvNg5FWWQ6aYz74pqs2ASBDbABcqpXJcyIfimLQLKmY_d4OCy2cPH2i0-k/exec, {
+        const res = await fetch(APPS_SCRIPT_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
