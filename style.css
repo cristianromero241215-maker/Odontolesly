@@ -6,7 +6,7 @@ body{font-family:Roboto,system-ui,-apple-system,sans-serif;color:var(--text);bac
 .container{width:min(1100px,92%);margin:0 auto}
 
 /* Header */
-.site-header{position:sticky;top:0;z-index:50;background:#fff7fa;box-shadow:0 1px 10px rgba(0,0,0,.06)}
+.site-header{position:sticky;top:0;z-index:50;background:#d81b60;box-shadow:0 1px 10px rgba(0,0,0,.06)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0}
 .logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--text);font-weight:700}
 .logo img{height:40px;width:auto;display:block}
