@@ -191,7 +191,7 @@
     horaSelect.innerHTML = '<option value="">Cargando horas...</option>';
     horaSelect.disabled = true;
     try {
-      const res = await fetch(`${APPS_SCRIPT_URL}?date=${fecha}`);
+      const res = await fetch(`${https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec}?date=${fecha}`);
       const data = await res.json();
       if (data.ok) {
         if (data.hours.length === 0) {
@@ -240,7 +240,7 @@
     // Enviar
     setLoading(true);
     try {
-      const res = await fetch(APPS_SCRIPT_URL, {
+      const res = await fetch(https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         // Si te da error de CORS, cambia a:  mode: 'no-cors'  y comenta la lectura de JSON
