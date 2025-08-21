@@ -74,19 +74,24 @@
 
     <div class="form-group">
       <label for="telefono">Teléfono</label>
-      <input type="tel" id="telefono" name="telefono" placeholder="+52 33 1234 5678" required>
+      <input type="tel" id="telefono" name="telefono" placeholder="+52XXXXXXXXXX" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="tucorreo@dominio.com" required>
     </div>
 
     <div class="form-group">
       <label for="tratamiento">Tratamiento</label>
       <select id="tratamiento" name="tratamiento" required>
         <option value="" disabled selected>Selecciona un tratamiento</option>
-        <option value="limpieza">Limpieza Dental</option>
-        <option value="endodoncia">Endodoncia</option>
-        <option value="extraccion">Extracción</option>
-        <option value="corona">Corona</option>
-        <option value="incrustacion">Incrustación</option>
-        <option value="resina">Resina</option>
+        <option value="Limpieza Dental">Limpieza Dental</option>
+        <option value="Endodoncia">Endodoncia</option>
+        <option value="Extracción">Extracción</option>
+        <option value="Corona">Corona</option>
+        <option value="Incrustación">Incrustación</option>
+        <option value="Resina">Resina</option>
       </select>
     </div>
 
@@ -97,10 +102,11 @@
 
     <div class="form-group">
       <label for="hora">Hora</label>
-      <input type="time" id="hora" name="hora" required>
+      <select id="hora" name="hora" required>
+        <option value="">Selecciona una fecha primero</option>
+      </select>
     </div>
 
-    <!-- Preguntas adicionales que ya estaban -->
     <div class="form-group">
       <label for="ultima-limpieza">¿Cuándo fue tu última limpieza dental?</label>
       <input type="date" id="ultima-limpieza" name="ultima-limpieza">
@@ -110,10 +116,10 @@
       <label for="dolor">Nivel de dolor actual</label>
       <select id="dolor" name="dolor">
         <option value="" disabled selected>Selecciona una opción</option>
-        <option value="ninguno">Ninguno</option>
-        <option value="leve">Leve</option>
-        <option value="moderado">Moderado</option>
-        <option value="intenso">Intenso</option>
+        <option value="Ninguno">Ninguno</option>
+        <option value="Leve">Leve</option>
+        <option value="Moderado">Moderado</option>
+        <option value="Intenso">Intenso</option>
       </select>
     </div>
 
@@ -127,8 +133,13 @@
       <textarea id="motivo" name="motivo" rows="3" placeholder="Describe brevemente el motivo de tu consulta"></textarea>
     </div>
 
-    <button type="submit" class="btn-enviar">📅 Reservar Cita</button>
+    <button type="submit" class="btn-enviar">
+      <span class="btn-text">📅 Reservar Cita</span>
+      <span class="btn-loader" aria-hidden="true"></span>
+    </button>
   </form>
+
+  <div id="mensaje-form" class="mensaje"></div>
 </section>
 
     <section id="contacto" class="contact container">
