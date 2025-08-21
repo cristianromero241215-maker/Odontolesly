@@ -40,7 +40,7 @@ body{font-family:Roboto,system-ui,-apple-system,sans-serif;color:var(--text);bac
 .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(233,30,99,.18)}
 
 /* Booking */
-.booking{padding:48px 0 20px}
+.booking{padding:48px 20px}
 .form .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 label{display:flex;flex-direction:column;gap:.4rem;font-weight:500}
 input,select,textarea{padding:.8rem .9rem;border:1.5px solid #e5e7eb;border-radius:12px;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
