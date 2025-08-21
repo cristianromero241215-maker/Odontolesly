@@ -62,94 +62,83 @@
       </div>
     </section>
 
-      <section id="agendar-cita" class="cita-section">
-  <h2>Agendar Cita</h2>
-  <p>Completa el formulario para reservar tu cita con la Dra. Lesly Vázquez.</p>
+      <section id="agendar-cita" class="cita-section container">
+      <h2>Agendar Cita</h2>
+      <form id="formCita" class="cita-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre completo</label>
+            <input type="text" id="nombre" required placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" id="telefono" required placeholder="+52XXXXXXXXXX">
+          </div>
+        </div>
 
-  <form id="cita-form" class="cita-form">
-    <div class="form-group">
-      <label for="nombre">Nombre completo</label>
-      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-    </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" required placeholder="tucorreo@dominio.com">
+          </div>
+          <div class="form-group">
+            <label>Tratamiento</label>
+            <select id="tratamiento" required>
+              <option value="">-- Selecciona --</option>
+              <option value="Limpieza dental">Limpieza dental</option>
+              <option value="Endodoncia">Endodoncia</option>
+              <option value="Extracción">Extracción</option>
+              <option value="Corona">Corona</option>
+              <option value="Incrustación">Incrustación</option>
+              <option value="Resina">Resina</option>
+            </select>
+          </div>
+        </div>
 
-    <div class="form-group">
-      <label for="telefono">Teléfono</label>
-      <input type="tel" id="telefono" name="telefono" placeholder="+52XXXXXXXXXX" required>
-    </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Fecha de la cita</label>
+            <input type="date" id="fecha" required>
+          </div>
+          <div class="form-group">
+            <label>Hora disponible</label>
+            <select id="hora" required>
+              <option value="">-- Selecciona una fecha primero --</option>
+            </select>
+          </div>
+        </div>
 
-    <div class="form-group">
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="email" placeholder="tucorreo@dominio.com" required>
-    </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Última limpieza dental</label>
+            <input type="date" id="ultimaLimpieza">
+          </div>
+          <div class="form-group">
+            <label>Dolor actual</label>
+            <select id="dolor" required>
+              <option value="No">No</option>
+              <option value="Sí">Sí</option>
+            </select>
+          </div>
+        </div>
 
-    <div class="form-group">
-      <label for="tratamiento">Tratamiento</label>
-      <select id="tratamiento" name="tratamiento" required>
-        <option value="" disabled selected>Selecciona un tratamiento</option>
-        <option value="Limpieza Dental">Limpieza Dental</option>
-        <option value="Endodoncia">Endodoncia</option>
-        <option value="Extracción">Extracción</option>
-        <option value="Corona">Corona</option>
-        <option value="Incrustación">Incrustación</option>
-        <option value="Resina">Resina</option>
-      </select>
-    </div>
+        <div class="form-group">
+          <label>Síntomas</label>
+          <textarea id="sintomas" rows="3" placeholder="Ej. inflamación, sangrado, sensibilidad..."></textarea>
+        </div>
 
-    <div class="form-group">
-      <label for="fecha">Fecha</label>
-      <input type="date" id="fecha" name="fecha" required>
-    </div>
+        <div class="form-group">
+          <label>Motivo de la cita</label>
+          <textarea id="motivo" rows="3" placeholder="Describe brevemente tu motivo de consulta"></textarea>
+        </div>
 
-    <div class="form-group">
-      <label for="hora">Hora</label>
-      <select id="hora" name="hora" required>
-        <option value="">Selecciona una fecha primero</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="ultima-limpieza">¿Cuándo fue tu última limpieza dental?</label>
-      <input type="date" id="ultima-limpieza" name="ultima-limpieza">
-    </div>
-
-    <div class="form-group">
-      <label for="dolor">Nivel de dolor actual</label>
-      <select id="dolor" name="dolor">
-        <option value="" disabled selected>Selecciona una opción</option>
-        <option value="Ninguno">Ninguno</option>
-        <option value="Leve">Leve</option>
-        <option value="Moderado">Moderado</option>
-        <option value="Intenso">Intenso</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="sintomas">Signos o síntomas</label>
-      <textarea id="sintomas" name="sintomas" rows="3" placeholder="Ej. inflamación, sangrado, sensibilidad..."></textarea>
-    </div>
-
-    <div class="form-group">
-      <label for="motivo">Descripción del motivo de consulta</label>
-      <textarea id="motivo" name="motivo" rows="3" placeholder="Describe brevemente el motivo de tu consulta"></textarea>
-    </div>
-
-    <button type="submit" class="btn-enviar">
-      <span class="btn-text">📅 Reservar Cita</span>
-      <span class="btn-loader" aria-hidden="true"></span>
-    </button>
-  </form>
-
-  <div id="mensaje-form" class="mensaje"></div>
-</section>
-
-    <section id="contacto" class="contact container">
-      <h2>Contacto</h2>
-      <ul class="contact-list">
-        <li>WhatsApp: <a href="https://wa.me/523323303334" target="_blank">+52 33 2330 3334</a></li>
-        <li>Instagram: <a href="https://www.instagram.com/dra.lesly_vazquez" target="_blank">@dra.lesly_vazquez</a></li>
-        <li>Dirección: Guadalajara, Jalisco</li>
-      </ul>
-      </section>
+        <button type="submit" class="btn btn-primary">
+          <span class="btn-text">📅 Reservar Cita</span>
+          <span class="btn-loader" aria-hidden="true"></span>
+        </button>
+      </form>
+      <div id="mensaje" class="mensaje"></div>
+    </section>
   </main>
 
   <footer class="site-footer">
