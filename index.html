@@ -162,7 +162,7 @@
   <a href="https://wa.me/523323303334" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><img src="assets/whatsapp.png" alt=""></a>
 
   <script>
-    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec";
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzYPvCIL5zvNg5FWWQ6aYz74pqs2ASBDbABcqpXJcyIfimLQLKmY_d4OCy2cPH2i0-k/exec";
 
     const form = document.getElementById("formCita");
     const fechaInput = document.getElementById("fecha");
@@ -176,7 +176,7 @@
       horaSelect.innerHTML = "<option>Cargando...</option>";
       horaSelect.disabled = true;
       try {
-        const res = await fetch(`${https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec}?date=${fechaInput.value}`);
+        const res = await fetch(`${https://script.google.com/macros/s/AKfycbzYPvCIL5zvNg5FWWQ6aYz74pqs2ASBDbABcqpXJcyIfimLQLKmY_d4OCy2cPH2i0-k/exec}?date=${fechaInput.value}`);
         const data = await res.json();
         if (!data.ok) throw new Error(data.message);
 
@@ -209,7 +209,7 @@
       };
 
       try {
-        const res = await fetch(https://script.google.com/macros/s/AKfycbwkJVznRpqxaJAcCxSXbF1gA3PNi9mVzx3xpNLWjEQnrOx5rL1TJ7rDnSyqHlsYNfFZ/exec, {
+        const res = await fetch(https://script.google.com/macros/s/AKfycbzYPvCIL5zvNg5FWWQ6aYz74pqs2ASBDbABcqpXJcyIfimLQLKmY_d4OCy2cPH2i0-k/exec, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
