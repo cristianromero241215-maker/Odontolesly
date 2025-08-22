@@ -2,47 +2,207 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Servicios - Dra. Lesly Vázquez</title>
+  <meta name="description" content="Descubre los tratamientos dentales ofrecidos por la Dra. Lesly Vázquez: limpiezas, endodoncias, extracciones, coronas, incrustaciones y resinas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="index.html"><img src="assets/logo.png" alt="Logo"/><span>Dra. Lesly Vázquez</span></a>
-      <nav class="main-nav">
-        <a href="index.html#inicio">Inicio</a>
+      <a class="logo" href="index.html" aria-label="Inicio de la página">
+        <img src="assets/logo.png" alt="Logo de la Clínica Dental Dra. Lesly Vázquez" />
+        <span>Dra. Lesly Vázquez</span>
+      </a>
+      <nav class="main-nav" aria-label="Principal">
+        <a href="index.html">Inicio</a>
         <a href="servicios.html" class="active">Servicios</a>
         <a href="signos-sintomas.html">Signos y Síntomas</a>
-        <a href="index.html#agendar">Agendar</a>
+        <a href="index.html#agendar-cita">Agendar</a>
         <a href="index.html#contacto">Contacto</a>
-        <a href="admin/login.html">Admin</a>
+        <a href="admin/login.html" class="admin-link">Admin</a>
       </nav>
-      <button class="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <button class="burger" aria-label="Abrir menú de navegación" aria-expanded="false">☰</button>
     </div>
   </header>
 
   <main class="container">
-    <h1>Servicios</h1>
-    <section id="limpiezas" class="service-block"><h2>Limpiezas Dentales</h2><p>Eliminación de placa, sarro y manchas. Recomendado cada 6 meses.</p></section>
-    <section id="endodoncias" class="service-block"><h2>Endodoncias</h2><p>Tratamiento del nervio para conservar piezas con dolor o infección.</p></section>
-    <section id="extracciones" class="service-block"><h2>Extracciones</h2><p>Procedimientos cuando no es posible salvar la pieza.</p></section>
-    <section id="coronas" class="service-block"><h2>Coronas</h2><p>Restauraciones completas para dientes debilitados.</p></section>
-    <section id="incrustaciones" class="service-block"><h2>Incrustaciones</h2><p>Alternativa conservadora a la corona para pérdidas moderadas.</p></section>
-    <section id="resinas" class="service-block"><h2>Resinas</h2><p>Restauraciones estéticas del color del diente.</p></section>
+    <h1>Nuestros Servicios Dentales</h1>
+    <p class="section-sub">Soluciones integrales para una salud bucal óptima y una sonrisa radiante.</p>
+
+    <section id="limpiezas" class="service-block">
+      <div class="service-content">
+        <h2>Limpiezas Dentales Profesionales</h2>
+        <p>Una limpieza dental profesional, también conocida como profilaxis, es un procedimiento preventivo para mantener una buena higiene bucal. Consiste en la eliminación de placa bacteriana, sarro y manchas superficiales acumuladas en los dientes, incluso en zonas de difícil acceso.</p>
+        
+        <h3>Beneficios de una Limpieza Dental</h3>
+        <ul>
+          <li>**Previene caries** y enfermedades de las encías como gingivitis y periodontitis.</li>
+          <li>**Elimina el mal aliento** (halitosis) causado por la acumulación de bacterias.</li>
+          <li>**Contribuye a un mejor aspecto estético** al remover manchas de café, té o tabaco.</li>
+          <li>Permite la **detección temprana** de problemas como caries o fracturas.</li>
+        </ul>
+      </div>
+
+      <div class="faq">
+        <h3>Preguntas Frecuentes</h3>
+        <dl>
+          <dt>¿Cada cuánto tiempo debo realizarme una limpieza?</dt>
+          <dd>Se recomienda una limpieza profesional cada **6 meses**, aunque en pacientes con mayor riesgo de acumulación de sarro se puede sugerir una frecuencia mayor.</dd>
+          
+          <dt>¿Duele una limpieza dental?</dt>
+          <dd>Generalmente es un procedimiento indoloro. Puede haber una ligera sensibilidad, pero no requiere anestesia. La intensidad depende de la cantidad de sarro acumulado.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="endodoncias" class="service-block">
+      <div class="service-content">
+        <h2>Endodoncias</h2>
+        <p>Una endodoncia es un tratamiento para salvar un diente cuando la pulpa dental (el tejido interno con nervios y vasos sanguíneos) se inflama o se infecta, generalmente a causa de una caries profunda, una fractura o un golpe. El procedimiento consiste en extraer la pulpa dañada, limpiar y sellar el conducto radicular para evitar la extracción de la pieza.</p>
+        
+        <h3>¿Cuándo es necesaria una endodoncia?</h3>
+        <ul>
+          <li>Dolor intenso y persistente al masticar o morder.</li>
+          <li>Sensibilidad prolongada a alimentos o bebidas frías y calientes.</li>
+          <li>Hinchazón o sensibilidad en las encías alrededor del diente afectado.</li>
+          <li>Presencia de un absceso o fístula (un pequeño grano) en la encía.</li>
+        </ul>
+      </div>
+      
+      <div class="faq">
+        <h3>Preguntas Frecuentes</h3>
+        <dl>
+          <dt>¿Es doloroso el tratamiento de endodoncia?</dt>
+          <dd>No. El procedimiento se realiza con **anestesia local**, por lo que sentirás poco o ningún dolor durante la endodoncia. La molestia que se siente antes del tratamiento se debe a la infección, no al procedimiento en sí.</dd>
+          
+          <dt>¿Un diente con endodoncia es más frágil?</dt>
+          <dd>Sí. Al retirar la pulpa, el diente se vuelve más seco. Por ello, es común que después de una endodoncia se recomiende la colocación de una corona para protegerlo y restaurar su función completa.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="extracciones" class="service-block">
+      <div class="service-content">
+        <h2>Extracciones Dentales</h2>
+        <p>Una extracción es el procedimiento para remover un diente de su alveolo en el hueso maxilar o mandibular. Se considera como el último recurso cuando un diente está dañado más allá de la posibilidad de ser restaurado, ya sea por caries severas, enfermedad periodontal avanzada, fracturas o impactación de las muelas del juicio.</p>
+
+        <h3>Cuidados Post-Extracción</h3>
+        <ul>
+          <li>**Mantén la gasa** en la zona por 30-45 minutos para detener el sangrado y formar un coágulo.</li>
+          <li>**No enjuagues ni escupas** durante las primeras 24 horas para evitar desprender el coágulo.</li>
+          <li>Aplica **compresas frías** en la mejilla para reducir la hinchazón.</li>
+          <li>Sigue una **dieta blanda y fría** los primeros días y evita alimentos calientes, picantes o duros.</li>
+          <li>**Evita fumar y beber alcohol**, ya que ralentizan la cicatrización.</li>
+        </ul>
+      </div>
+      <div class="faq">
+        <h3>Preguntas Frecuentes</h3>
+        <dl>
+          <dt>¿Qué pasa si no me extraigo un diente dañado?</dt>
+          <dd>Un diente gravemente dañado puede provocar dolor, infección, abscesos, y dañar los dientes vecinos. La infección puede extenderse al hueso y a otras partes del cuerpo.</dd>
+          <dt>¿Cuándo puedo volver a cepillarme?</dt>
+          <dd>Debes cepillarte los demás dientes normalmente, pero con cuidado de no tocar la zona de la extracción. Al día siguiente, puedes enjuagar suavemente con agua salada tibia si tu dentista lo recomienda.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="coronas" class="service-block">
+      <div class="service-content">
+        <h2>Coronas Dentales</h2>
+        <p>Una corona es una "tapa" o funda que se coloca sobre un diente dañado o debilitado para restaurar su forma, tamaño, fuerza y apariencia. Son la solución ideal para proteger un diente después de una endodoncia, para cubrir un implante dental o para restaurar un diente fracturado.</p>
+
+        <h3>Materiales comunes para Coronas</h3>
+        <ul>
+          <li>**Porcelana o Cerámica:** Ofrecen la mejor estética y se mimetizan con los dientes naturales. Son ideales para los dientes frontales.</li>
+          <li>**Porcelana sobre Metal:** Combinan la estética de la porcelana con la resistencia del metal, siendo una opción muy duradera.</li>
+          <li>**Zirconio:** Material de alta resistencia, biocompatible y con una excelente estética. Se considera una de las opciones más avanzadas.</li>
+        </ul>
+      </div>
+      <div class="faq">
+        <h3>Preguntas Frecuentes</h3>
+        <dl>
+          <dt>¿Cuánto tiempo dura una corona dental?</dt>
+          <dd>Con una buena higiene bucal y cuidados adecuados, una corona puede durar entre **5 y 15 años**, e incluso más.</dd>
+          <dt>¿Qué procedimiento se sigue para colocar una corona?</dt>
+          <dd>El proceso usualmente requiere dos visitas. En la primera, se prepara el diente y se toma una impresión. En la segunda, se cementa la corona final.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="incrustaciones" class="service-block">
+      <div class="service-content">
+        <h2>Incrustaciones (Inlays y Onlays)</h2>
+        <p>Las incrustaciones son restauraciones dentales indirectas que se fabrican en un laboratorio y se utilizan para reparar dientes con caries o fracturas que son demasiado grandes para un relleno convencional, pero no lo suficientemente severas como para necesitar una corona. Las **inlays** se colocan dentro de las cúspides del diente, mientras que las **onlays** cubren una o más cúspides.</p>
+
+        <h3>Ventajas de las Incrustaciones</h3>
+        <ul>
+          <li>**Preservan más la estructura dental sana** que una corona.</li>
+          <li>Ofrecen una **mayor durabilidad y resistencia** que los rellenos de resina.</li>
+          <li>Proporcionan un ajuste preciso y una apariencia natural.</li>
+        </ul>
+      </div>
+      <div class="faq">
+        <h3>Preguntas Frecuentes</h3>
+        <dl>
+          <dt>¿Cuánto tiempo duran las incrustaciones?</dt>
+          <dd>Las incrustaciones de porcelana o resina son muy duraderas, con una vida útil que puede superar los **20 años** con el cuidado adecuado.</dd>
+          <dt>¿En qué se diferencian de un relleno común?</dt>
+          <dd>A diferencia de los rellenos que se colocan directamente en la boca, las incrustaciones se fabrican a medida en un laboratorio, lo que garantiza un ajuste superior, mayor resistencia y mejor estética.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="resinas" class="service-block">
+      <div class="service-content">
+        <h2>Resinas Dentales</h2>
+        <p>Las resinas, también conocidas como empastes o rellenos de composite, son restauraciones estéticas que se utilizan para tratar dientes con caries. Su principal ventaja es que su color es similar al del diente natural, lo que las hace casi invisibles. Se adhieren directamente a la estructura dental, siendo un tratamiento mínimamente invasivo y con resultados inmediatos.</p>
+
+        <h3>Ventajas de las Resinas</h3>
+        <ul>
+          <li>**Alta estética:** Se mimetizan con el color del diente.</li>
+          <li>**Adhesión fuerte:** Requieren una mínima eliminación de la estructura dental sana.</li>
+          <li>**Biocompatibles:** No contienen metales tóxicos.</li>
+        </ul>
+      </div>
+      <div class="faq">
+        <h3>Preguntas Frecuentes</h3>
+        <dl>
+          <dt>¿Cuánto tiempo dura una resina?</dt>
+          <dd>La duración promedio de una resina es de **5 a 7 años**, pero con una buena higiene y cuidados pueden durar 10 años o más. Factores como el bruxismo o una dieta con muchos alimentos duros pueden reducir su vida útil.</dd>
+          <dt>¿Para qué se usan las resinas?</dt>
+          <dd>Además de tratar caries, se usan para reparar pequeñas fracturas, cerrar espacios entre dientes y cambiar la forma o el tamaño de piezas dentales para mejorar la estética.</dd>
+        </dl>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="brand"><img src="assets/logo.png" alt="Logo" /><div><strong>Dra. Lesly Vázquez</strong><br/><small>© 2025</small></div></div>
+      <div class="brand">
+        <img src="assets/logo.png" alt="Logo de la clínica" />
+        <div><strong>Dra. Lesly Vázquez</strong><br /><small>© 2025</small></div>
+      </div>
       <nav class="footer-nav">
-        <a href="index.html#inicio">Inicio</a><a href="servicios.html" class="active">Servicios</a><a href="signos-sintomas.html">Signos y Síntomas</a><a href="admin/login.html">Admin</a>
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="signos-sintomas.html">Signos y Síntomas</a>
+        <a href="admin/login.html">Admin</a>
       </nav>
-      <div class="social"><a href="https://www.instagram.com/dra.lesly_vazquez" target="_blank"><img src="assets/instagram.svg" alt="Instagram"/></a></div>
+      <div class="social">
+        <a href="https://www.instagram.com/dra.lesly_vazquez" target="_blank">
+          <img src="assets/instagram.svg" alt="Instagram" />
+        </a>
+      </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/523323303334" class="whatsapp-float" target="_blank"><img src="assets/whatsapp.svg" alt=""></a>
-  <script src="script.js"></script>
+  <a href="https://wa.me/523323303334" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+    <img src="assets/whatsapp.svg" alt="Ícono de WhatsApp" />
+  </a>
 </body>
 </html>
